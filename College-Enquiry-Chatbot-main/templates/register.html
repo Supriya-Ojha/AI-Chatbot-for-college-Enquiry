@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/ionicons.min.css') }}">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .register-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .register-box h4 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            background: transparent;
+            color: white;
+            border: 1px solid #ccc;
+        }
+
+        .form-control::placeholder {
+            color: #ccc;
+        }
+
+        .btn {
+            background-color: #2980ef;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: #1c6ed5;
+        }
+
+        .forgot {
+            color: #ccc;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .forgot a {
+            color: white;
+        }
+
+        .forgot a:hover {
+            text-decoration: none;
+        }
+
+        /* MOBILE FIX */
+        @media (max-width: 768px) {
+            .register-box {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">HS Bot</a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- REGISTER SECTION -->
+<section class="register-section">
+
+    <div class="register-box">
+
+        <h4>REGISTER</h4>
+
+        <form action="/register_user" method="POST">
+
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-block" type="submit">
+                    Register
+                </button>
+            </div>
+
+        </form>
+
+        <p class="forgot">
+            Already a member? <a href="/">Login</a>
+        </p>
+
+    </div>
+
+</section>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>
